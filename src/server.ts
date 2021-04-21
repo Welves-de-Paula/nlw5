@@ -1,13 +1,11 @@
-import express, { request, response } from 'express';
+import express from 'express';
 
 import './database';
+import { routes } from "./routes"
+
 const app = express();
 
-app.get('/', (request, response) => {
-  return response.send("teste")
-});
+app.use(express.json())
+app.use(routes)
 
-app.post("/", (request, response) => {
-
-})
 app.listen(8080, () => console.log('Serve Port 8080'))
