@@ -1,12 +1,11 @@
-import { Entity, PrimaryColumn, CreateDateColumn, Column } from "typeorm";
-import { v4 as uuid } from "uuid";
+import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
+import { v4 as uuid } from 'uuid'
+
 
 @Entity("users")
 class User {
-
   @PrimaryColumn()
   id: string;
-
   @Column()
   email: string;
 
@@ -18,7 +17,6 @@ class User {
       this.id = uuid();
     }
   }
+}
 
-};
-
-export { User };
+export { User }
